@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const URL =
-  "mongodb+srv://lav1123:SOqQx4y8QmBqHo2v@cluster0.k9ivj0j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const dotenv = require("dotenv");
+const DB = process.env.MONGODB_URI;
 const connectDb = async () => {
   try {
     mongoose.set("strictQuery", true);
-    await mongoose.connect(URL, {
+    await mongoose.connect(DB, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
